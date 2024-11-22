@@ -1,21 +1,4 @@
 #!/usr/bin/env bash
-set -ex
+set -e
 
-mamba install -c conda-forge \
-        dask==2024.9.0 \
-        dask-image==2024.5.3 \
-        distributed==2024.9.0 \
-        matplotlib \
-        "numpy<2" \
-        pandas \
-        s3fs==2024.9.0 \
-        scikit-image \
-        scipy \
-        seaborn \
-        zarr==2.18.3 
-
-git clone https://github.com/juglab/n2v.git
-cd n2v
-pip install -e .
-
-mamba install -c conda-forge bioimageio.core==0.5.9
+pip install "careamics[examples, tensorboard]" matplotlib dask distributed zarr
